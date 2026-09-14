@@ -1,1 +1,655 @@
-<!-- PLACEHOLDER - actual file will be updated via workflow -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPT-6 Astra: The Complete Zero-to-Hero Guide — Premium Ebook</title>
+<meta name="description" content="Master OpenAI's GPT-6 Astra — 108-page premium guide. Prompts, agents, computer use, cost optimisation & 8 business models. Digital + printed editions.">
+<link rel="canonical" href="https://usawaliemail121-art.github.io/astra-guide/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GPT-6 Astra: The Complete Zero-to-Hero Guide">
+<meta property="og:description" content="The complete 108-page premium guide — prompts, agents, computer use, cost optimisation & 8 business models. Get the digital or printed edition.">
+<meta property="og:url" content="https://usawaliemail121-art.github.io/astra-guide/">
+<meta property="og:image" content="https://usawaliemail121-art.github.io/astra-guide/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+/* ============================================================
+   CONFIG — edit these to go live
+   ============================================================ */
+:root{
+  --price-digital: ₹999;       /* <-- set your digital-only price here */
+  --price-combo: ₹1,999;      /* <-- set your digital + printed price here */
+}
+
+/* ============================================================
+   THEME
+   ============================================================ */
+:root{
+  --navy:#0a1628;
+  --navy-2:#0f1f38;
+  --navy-3:#152a48;
+  --gold:#d4a73a;
+  --gold-2:#c9a227;
+  --gold-soft:rgba(212,167,58,.14);
+  --cream:#f8f5ef;
+  --cream-2:#efe9dd;
+  --ink:#1a1a2e;
+  --text-dim:rgba(248,245,239,.72);
+  --text-dim-2:rgba(248,245,239,.5);
+  --line:rgba(212,167,58,.22);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --maxw:1180px;
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--navy);
+  color:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:var(--gold);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.8}
+img{max-width:100%;display:block}
+
+/* diamond ornament */
+.diamond{display:inline-block;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin:0 8px;vertical-align:middle;opacity:.8}
+.diamond-row{text-align:center;margin:0 0 10px}
+.diamond-row .diamond{width:5px;height:5px}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,22,40,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:14px 24px}
+.brand{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.3px;color:var(--cream);display:flex;align-items:center;gap:10px}
+.brand .mark{width:26px;height:26px;border:1.5px solid var(--gold);transform:rotate(45deg);position:relative;flex:none}
+.brand .mark::after{content:"";position:absolute;inset:4px;border:1px solid var(--gold);opacity:.5}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:var(--text-dim);font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--gold);opacity:1}
+.nav-cta{font-size:13px;font-weight:600;padding:9px 20px;border:1px solid var(--gold);border-radius:40px;color:var(--gold);letter-spacing:.4px}
+.nav-cta:hover{background:var(--gold);color:var(--navy);opacity:1}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding:70px 0 90px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 78% 32%,rgba(212,167,58,.10),transparent 52%),
+    radial-gradient(circle at 15% 80%,rgba(21,42,72,.6),transparent 60%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);padding:7px 16px;border:1px solid var(--line);border-radius:40px;
+  background:var(--gold-soft);margin-bottom:24px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:800;
+  font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.5px;
+  margin-bottom:22px;
+}
+.hero h1 .gold{color:var(--gold)}
+.hero p.lead{font-size:1.12rem;color:var(--text-dim);max-width:520px;margin-bottom:30px;line-height:1.7}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:34px}
+.hero-stat .n{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--gold)}
+.hero-stat .l{font-size:12.5px;color:var(--text-dim-2);letter-spacing:.5px;text-transform:uppercase}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.3px;
+  padding:15px 30px;border-radius:8px;cursor:pointer;border:none;transition:all .25s;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 8px 26px rgba(212,167,58,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(212,167,58,.36)}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* 3D book mockup */
+.book-stage{perspective:1600px;display:flex;justify-content:center;align-items:center;min-height:480px}
+.book{
+  width:280px;height:384px;position:relative;
+  transform-style:preserve-3d;
+  transform:rotateY(-22deg) rotateX(4deg);
+  transition:transform .6s ease;
+  animation:bookFloat 6s ease-in-out infinite;
+}
+.book:hover{transform:rotateY(-8deg) rotateX(2deg)}
+@keyframes bookFloat{0%,100%{transform:rotateY(-22deg) rotateX(4deg) translateY(0)}50%{transform:rotateY(-20deg) rotateX(3deg) translateY(-14px)}}
+@media(prefers-reduced-motion:reduce){.book{animation:none}}
+.book-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:3px 8px 8px 3px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.55),0 12px 30px rgba(0,0,0,.4)}
+.book-face img{width:100%;height:100%;object-fit:cover}
+.book-spine{position:absolute;left:0;top:0;width:24px;height:100%;transform:rotateY(90deg);transform-origin:left center;background:linear-gradient(90deg,#040b18,#0a1628);border-radius:3px 0 0 3px}
+.book-pages{position:absolute;right:-6px;top:4px;width:6px;height:calc(100% - 8px);background:repeating-linear-gradient(90deg,#f0e8d6 0,#e8dfca 1px,#d8cdb3 2px);transform:rotateY(-90deg);transform-origin:right;box-shadow:inset -2px 0 4px rgba(0,0,0,.2)}
+.book-shadow{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:80%;height:20px;background:radial-gradient(ellipse,rgba(0,0,0,.5),transparent 70%);filter:blur(8px);z-index:-1}
+
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:50px;text-align:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-stats{justify-content:center}
+  .hero-cta{justify-content:center}
+  .book{width:230px;height:315px}
+  .book-stage{min-height:380px}
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar{background:var(--navy-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center}
+.stat-item .n{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-item .l{font-size:12.5px;color:var(--text-dim);margin-top:6px;letter-spacing:.3px}
+@media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+.section{padding:90px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.section-label{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+.section-title{font-family:var(--serif);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.15;margin-bottom:16px}
+.section-sub{color:var(--text-dim);font-size:1.05rem}
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.feat-card{
+  background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:32px 28px;transition:all .3s;position:relative;overflow:hidden;
+}
+.feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
+.feat-card:hover{transform:translateY(-4px);border-color:rgba(212,167,58,.4);background:var(--navy-3)}
+.feat-card:hover::before{opacity:1}
+.feat-icon{width:46px;height:46px;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--gold-soft)}
+.feat-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.feat-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:10px}
+.feat-card p{color:var(--text-dim);font-size:.95rem;line-height:1.6}
+@media(max-width:880px){.feat-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   CHAPTERS / INSIDE THE BOOK
+   ============================================================ */
+.chapters{background:var(--navy-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px}
+.ch-item{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(212,167,58,.08)}
+.ch-num{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--gold);flex:none;width:32px}
+.ch-title{font-weight:500;font-size:.98rem;color:var(--cream)}
+.ch-desc{font-size:.85rem;color:var(--text-dim-2);margin-top:2px}
+@media(max-width:760px){.ch-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+.who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.who-card{display:flex;gap:16px;align-items:flex-start;padding:24px;background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r)}
+.who-dot{width:10px;height:10px;background:var(--gold);border-radius:50%;flex:none;margin-top:7px;box-shadow:0 0 0 4px var(--gold-soft)}
+.who-card h4{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin-bottom:5px}
+.who-card p{color:var(--text-dim);font-size:.92rem}
+@media(max-width:760px){.who-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   AUTHOR
+   ============================================================ */
+.author{background:var(--navy-2);border-top:1px solid var(--line)}
+.author-grid{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:820px;margin:0 auto}
+.author-badge{
+  width:120px;height:120px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2.4rem;font-weight:800;color:var(--navy);
+  border:3px solid var(--navy);box-shadow:0 0 0 1px var(--gold),0 14px 40px rgba(212,167,58,.25);
+}
+.author h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-bottom:6px}
+.author .role{color:var(--gold);font-size:.9rem;font-weight:600;letter-spacing:.5px;margin-bottom:14px}
+.author p{color:var(--text-dim);font-size:.98rem;margin-bottom:14px}
+.author-contact{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--line);border-radius:40px;font-size:.9rem}
+@media(max-width:680px){.author-grid{grid-template-columns:1fr;text-align:center;justify-items:center}}
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing{padding:90px 0}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto;align-items:stretch}
+.price-card{
+  background:var(--navy-2);border:1px solid var(--line);border-radius:18px;
+  padding:40px 34px;display:flex;flex-direction:column;position:relative;transition:all .3s;
+}
+.price-card:hover{transform:translateY(-4px)}
+.price-card.featured{
+  background:linear-gradient(165deg,var(--navy-3),var(--navy-2));
+  border:1.5px solid var(--gold);
+  box-shadow:0 20px 50px rgba(212,167,58,.14);
+}
+.price-badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 18px;border-radius:40px;white-space:nowrap;
+}
+.price-name{font-family:var(--serif);font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.price-tag{color:var(--text-dim);font-size:.9rem;margin-bottom:24px}
+.price-val{font-family:var(--serif);font-size:3rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:4px}
+.price-val .cur{font-size:1.6rem;vertical-align:top;margin-right:2px}
+.price-note{font-size:.8rem;color:var(--text-dim-2);margin-bottom:26px}
+.price-feats{list-style:none;margin-bottom:30px;flex-grow:1}
+.price-feats li{display:flex;gap:11px;align-items:flex-start;padding:9px 0;font-size:.93rem;color:var(--text-dim);border-bottom:1px solid rgba(212,167,58,.06)}
+.price-feats li:last-child{border-bottom:none}
+.price-feats .chk{width:18px;height:18px;flex:none;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.price-feats .chk svg{width:10px;height:10px;stroke:var(--gold);fill:none;stroke-width:2.5}
+.btn-price{width:100%;justify-content:center;padding:16px;font-size:15px}
+@media(max-width:760px){.price-grid{grid-template-columns:1fr;max-width:440px}}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:var(--navy-2);border-top:1px solid var(--line)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 4px;cursor:pointer;font-family:var(--serif);font-size:1.12rem;font-weight:600;color:var(--cream)}
+.faq-q .pm{color:var(--gold);font-size:1.4rem;transition:transform .3s;flex:none;margin-left:16px}
+.faq-item.open .pm{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;color:var(--text-dim);font-size:.96rem}
+.faq-item.open .faq-a{max-height:300px;padding:0 4px 22px}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(212,167,58,.12),transparent 55%)}
+.final-cta-inner{position:relative;max-width:640px;margin:0 auto}
+.final-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;margin-bottom:20px}
+.final-cta p{color:var(--text-dim);font-size:1.05rem;margin-bottom:34px}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--navy);border-top:1px solid var(--line);padding:50px 0 36px}
+.foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-brand{font-family:var(--serif);font-weight:700;font-size:16px}
+.foot-copy{font-size:.82rem;color:var(--text-dim-2)}
+.foot-contact a{color:var(--text-dim);font-size:.88rem}
+.foot-contact a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="mark"></span>GPT-6 Astra Guide</div>
+    <div class="nav-links">
+      <a href="#features">What's Inside</a>
+      <a href="#chapters">Chapters</a>
+      <a href="#author">Author</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="nav-cta">Get the Book</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="hero-eyebrow"><span class="diamond" style="margin:0;width:6px"></span>Premium Edition · September 2026</span>
+      <h1>Master <span class="gold">GPT-6 Astra</span> from Zero to Hero</h1>
+      <p class="lead">The complete 108-page guide to OpenAI's most capable model — prompts, agents, computer use, cost optimisation, and 8 business models you can build today.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="n">108</div><div class="l">Pages</div></div>
+        <div class="hero-stat"><div class="n">13</div><div class="l">Chapters</div></div>
+        <div class="hero-stat"><div class="n">23</div><div class="l">Prompt Templates</div></div>
+        <div class="hero-stat"><div class="n">8</div><div class="l">Business Ideas</div></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn btn-gold">Get Your Copy <span class="arr">→</span></a>
+        <a href="#features" class="btn btn-ghost">See What's Inside</a>
+      </div>
+    </div>
+    <div class="book-stage reveal">
+      <div class="book">
+        <div class="book-face"><img src="cover.jpg" alt="GPT-6 Astra: The Complete Zero-to-Hero Guide book cover"></div>
+        <div class="book-spine"></div>
+        <div class="book-pages"></div>
+        <div class="book-shadow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="n">1.05M</div><div class="l">Context Window Explained</div></div>
+      <div class="stat-item"><div class="n">5</div><div class="l">Reasoning Effort Levels</div></div>
+      <div class="stat-item"><div class="n">7</div><div class="l">Custom Diagrams</div></div>
+      <div class="stat-item"><div class="n">90%</div><div class="l">Cached Input Cost Cut</div></div>
+      <div class="stat-item"><div class="n">30-Day</div><div class="l">Mastery Roadmap</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label">What You'll Master</span>
+      <h2 class="section-title">Everything Astra Can Do — Explained Plainly</h2>
+      <p class="section-sub">From your first prompt to production-grade agents. No fluff, no filler — just the knowledge that turns Astra into a tool you actually use.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>Prompt Engineering</h3>
+        <p>OpenAI's official prompting framework — autonomy scope, instruction priority, completion criteria, and verification rules that make every prompt sharper.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Computer Use</h3>
+        <p>Automate browsers, fill forms, update CRMs, and operate desktop apps that have no API. Astra sees the screen and acts — you control the boundaries.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
+        <h3>Building AI Agents</h3>
+        <p>Function calling, structured outputs, the agent loop, and the Responses API. Deploy agents that do real work with proper safety guardrails.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 9l7-7 7 7M5 15l7 7 7-7"/></svg></div>
+        <h3>Slashing Costs</h3>
+        <p>Prompt caching, reasoning effort tuning, Batch & Flex modes. The included cost calculator worksheet shows your savings before you spend a rupee.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></div>
+        <h3>8 Business Models</h3>
+        <p>AI operations agencies, automated content studios, one-person consulting firms, SaaS, and more — with launch steps and illustrative pricing.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Safety & Deployment</h3>
+        <p>Authorisation boundaries, confirmation policies, audit logs, and human-review gates. Build with confidence, not guesswork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="section chapters" id="chapters">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label">Inside the Book</span>
+      <h2 class="section-title">13 Chapters + Full Appendices</h2>
+      <p class="section-sub">A structured path from absolute beginner to advanced practitioner.</p>
+    </div>
+    <div class="ch-grid">
+      <div class="ch-item"><span class="ch-num">01</span><div><div class="ch-title">What Is GPT-6 Astra?</div><div class="ch-desc">The model, the launch, what changed</div></div></div>
+      <div class="ch-item"><span class="ch-num">02</span><div><div class="ch-title">Getting Access</div><div class="ch-desc">ChatGPT, API, Azure, Bedrock, Copilot</div></div></div>
+      <div class="ch-item"><span class="ch-num">03</span><div><div class="ch-title">How Astra Thinks</div><div class="ch-desc">Reasoning, effort levels, behaviour</div></div></div>
+      <div class="ch-item"><span class="ch-num">04</span><div><div class="ch-title">The Prompt Framework</div><div class="ch-desc">Official structure, verification rules</div></div></div>
+      <div class="ch-item"><span class="ch-num">05</span><div><div class="ch-title">Slashing Costs</div><div class="ch-desc">Caching, Flex, effort tuning, calculator</div></div></div>
+      <div class="ch-item"><span class="ch-num">06</span><div><div class="ch-title">Computer Use</div><div class="ch-desc">Browser & desktop automation</div></div></div>
+      <div class="ch-item"><span class="ch-num">07</span><div><div class="ch-title">Function Calling</div><div class="ch-desc">Tools, structured outputs, async calls</div></div></div>
+      <div class="ch-item"><span class="ch-num">08</span><div><div class="ch-title">Building AI Agents</div><div class="ch-desc">The agent loop, subagents, deployment</div></div></div>
+      <div class="ch-item"><span class="ch-num">09</span><div><div class="ch-title">Business Ideas Built on Astra</div><div class="ch-desc">8 models with launch guidance</div></div></div>
+      <div class="ch-item"><span class="ch-num">10</span><div><div class="ch-title">Business Automation</div><div class="ch-desc">Sales, support, HR, e-commerce workflows</div></div></div>
+      <div class="ch-item"><span class="ch-num">11</span><div><div class="ch-title">Safety & Guardrails</div><div class="ch-desc">Boundaries, confirmation, audit logs</div></div></div>
+      <div class="ch-item"><span class="ch-num">12</span><div><div class="ch-title">Monitoring & Deployment</div><div class="ch-desc">Observability, testing, rollout</div></div></div>
+      <div class="ch-item"><span class="ch-num">13</span><div><div class="ch-title">Your 30-Day Roadmap</div><div class="ch-desc">Week-by-week mastery plan</div></div></div>
+      <div class="ch-item"><span class="ch-num">+</span><div><div class="ch-title">Appendices & Quick Start Card</div><div class="ch-desc">23 prompt templates, glossary, FAQ, resources</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label">Who It's For</span>
+      <h2 class="section-title">Built for Anyone Who Wants to Use AI Seriously</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal"><div class="who-dot"></div><div><h4>Entrepreneurs & Founders</h4><p>Launch AI-powered services, automate operations, and find business ideas that Astra makes practical.</p></div></div>
+      <div class="who-card reveal"><div class="who-dot"></div><div><h4>Developers & Engineers</h4><p>Build production agents with the Responses API, function calling, and proper cost control.</p></div></div>
+      <div class="who-card reveal"><div class="who-dot"></div><div><h4>Business Owners</h4><p>Automate sales, support, research, and reporting without hiring a full team.</p></div></div>
+      <div class="who-card reveal"><div class="who-dot"></div><div><h4>Beginners & Students</h4><p>No coding experience needed for the first half — start from zero and build up step by step.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="section author" id="author">
+  <div class="wrap">
+    <div class="author-grid reveal">
+      <div class="author-badge">FF</div>
+      <div>
+        <h3>Faisal Fayaz Lone</h3>
+        <div class="role">Author · AI Practitioner</div>
+        <p>Faisal researched GPT-6 Astra directly from OpenAI's official documentation, model guides, and system materials to create a guide that is accurate, practical, and honest. Every fact, price, and benchmark in this book is verified against primary sources.</p>
+        <a href="mailto:lonefaisal977@gmail.com" class="author-contact">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          lonefaisal977@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label">Choose Your Edition</span>
+      <h2 class="section-title">Get the Guide in Your Preferred Format</h2>
+      <p class="section-sub">Instant digital delivery. Printed edition shipped to your address.</p>
+    </div>
+    <div class="price-grid">
+      <!-- Digital Only -->
+      <div class="price-card reveal">
+        <div class="price-name">Digital Edition</div>
+        <div class="price-tag">Instant PDF download</div>
+        <div class="price-val" data-price="digital"><span class="cur">₹</span>999</div>
+        <div class="price-note">One-time payment · Lifetime access</div>
+        <ul class="price-feats">
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>108-page premium PDF ebook</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>23 ready-to-use prompt templates</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Cost calculator worksheet</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>30-day mastery roadmap</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>All 7 diagrams & code examples</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Instant delivery to your email</li>
+        </ul>
+        <button class="btn btn-gold btn-price" onclick="buy('digital')">Get Digital Edition</button>
+      </div>
+      <!-- Digital + Printed -->
+      <div class="price-card featured reveal">
+        <div class="price-badge">Best Value</div>
+        <div class="price-name">Digital + Printed Edition</div>
+        <div class="price-tag">PDF now + physical book shipped</div>
+        <div class="price-val" data-price="combo"><span class="cur">₹</span>1,999</div>
+        <div class="price-note">Includes everything in Digital + a printed copy</div>
+        <ul class="price-feats">
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Everything in the Digital Edition</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>High-quality printed paperback</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Premium navy & gold cover finish</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Shipped to your address in India</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Instant PDF while you wait</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Free updates for the first edition</li>
+        </ul>
+        <button class="btn btn-gold btn-price" onclick="buy('combo')">Get Digital + Printed</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label">Questions</span>
+      <h2 class="section-title">Frequently Asked</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><div class="faq-q">Do I need coding experience?<span class="pm">+</span></div><div class="faq-a">No. The first half of the book is written for complete beginners. Code examples appear later, and every line is explained. If you can copy-paste, you can follow along.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">How is the book delivered?<span class="pm">+</span></div><div class="faq-a">The digital edition is a PDF delivered instantly to your email after payment. The printed edition is shipped to your address and usually arrives within 5-7 business days across India.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Is the content up to date?<span class="pm">+</span></div><div class="faq-a">Yes. Every fact, price, benchmark, and API detail is verified against OpenAI's official documentation as of September 2026. Third-party examples are clearly labeled.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What payment methods do you accept?<span class="pm">+</span></div><div class="faq-a">We accept all major cards, UPI, net banking, and wallets through our secure payment gateway. Prices are in Indian Rupees (₹).</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Can I get a refund?<span class="pm">+</span></div><div class="faq-a">Due to the digital nature of the product, refunds are not available once the PDF is delivered. The printed edition can be replaced if damaged in transit.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">How do I contact you?<span class="pm">+</span></div><div class="faq-a">Email lonefaisal977@gmail.com for any questions about the book, feedback, or printed-book orders.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="diamond-row"><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span></div>
+    <h2>Start Mastering GPT-6 Astra Today</h2>
+    <p>108 pages of verified, practical knowledge. Prompts, agents, cost savings, and business ideas — all in one premium guide.</p>
+    <a href="#pricing" class="btn btn-gold">Choose Your Edition <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">GPT-6 Astra: The Complete Zero-to-Hero Guide</div>
+        <div class="foot-copy" style="margin-top:6px">© 2026 Faisal Fayaz Lone. All rights reserved.</div>
+      </div>
+      <div class="foot-contact">
+        <a href="mailto:lonefaisal977@gmail.com">lonefaisal977@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   PRICING CONFIG — change these to update prices everywhere
+   ============================================================ */
+const PRICES = {
+  digital: 999,    // <-- your digital-only price in ₹
+  combo: 1999      // <-- your digital + printed price in ₹
+};
+
+/* ============================================================
+   RAZORPAY INTEGRATION
+   When ready: paste your Razorpay Key ID below (from dashboard).
+   While empty, buttons show a "launching soon" message.
+   ============================================================ */
+const RAZORPAY_KEY_ID = "";  // e.g. "rzp_test_XXXXXXXX" or "rzp_live_XXXX"
+
+function buy(plan) {
+  const amount = PRICES[plan] * 100; // Razorpay uses paise
+  const planName = plan === 'combo'
+    ? 'GPT-6 Astra Guide — Digital + Printed Edition'
+    : 'GPT-6 Astra Guide — Digital Edition';
+
+  if (!RAZORPAY_KEY_ID) {
+    alert('Payment gateway is being set up.\n\nTo order now, email:\nlonefaisal977@gmail.com');
+    return;
+  }
+
+  const options = {
+    key: RAZORPAY_KEY_ID,
+    amount: amount,
+    currency: "INR",
+    name: "GPT-6 Astra Guide",
+    description: planName,
+    image: "",  // optional: add your logo URL
+    handler: function (response) {
+      // On successful payment — verify on your backend, then deliver
+      alert("Payment successful!\nPayment ID: " + response.razorpay_payment_id +
+            "\n\nWe'll email your ebook shortly. For printed orders, " +
+            "please email your address to lonefaisal977@gmail.com");
+      // TODO: send response.razorpay_payment_id to your backend
+      // to verify the signature and trigger delivery.
+    },
+    prefill: {
+      email: "",
+      contact: ""
+    },
+    notes: {
+      plan: plan,
+      product: "GPT-6 Astra Zero-to-Hero Guide"
+    },
+    theme: { color: "#0a1628" }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.on("payment.failed", function (resp) {
+    alert("Payment failed: " + resp.error.description);
+  });
+  rzp.open();
+}
+
+/* Sync displayed prices from PRICES config (edit only the values above) */
+(function syncPrices() {
+  const fmt = n => '₹' + n.toLocaleString('en-IN');
+  document.querySelectorAll('[data-price="digital"]').forEach(el => {
+    el.innerHTML = '<span class="cur">₹</span>' + PRICES.digital.toLocaleString('en-IN');
+  });
+  document.querySelectorAll('[data-price="combo"]').forEach(el => {
+    el.innerHTML = '<span class="cur">₹</span>' + PRICES.combo.toLocaleString('en-IN');
+  });
+})();
+
+/* ============================================================
+   FAQ accordion
+   ============================================================ */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
