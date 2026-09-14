@@ -27,6 +27,7 @@ jobs:
           perl -pi -e 's|https://usmanikart\.shop/cover\.jpg|https://usawaliemail121-art.github.io/astra-guide/cover.jpg|g' index.html
           perl -pi -e 's|https://usmanikart\.shop/|https://usawaliemail121-art.github.io/astra-guide/|g' index.html
           perl -pi -e 's/src="data:image\/jpeg;base64,[^"]*"/src="cover.jpg"/g' index.html
+          perl -pi -e 's/digital: 999/digital: 149/g' index.html
 
       - name: Ensure .nojekyll
         run: touch .nojekyll
