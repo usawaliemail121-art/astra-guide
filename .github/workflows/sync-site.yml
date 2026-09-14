@@ -19,7 +19,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          rm -f cover.jpg index.html
+          rm -f cover.jpg index.html GPT6_Astra_Zero_to_Hero_Guide.pdf
           gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --clobber
 
       - name: Transform index.html for GitHub Pages
@@ -28,6 +28,8 @@ jobs:
           perl -pi -e 's|https://usmanikart\.shop/|https://usawaliemail121-art.github.io/astra-guide/|g' index.html
           perl -pi -e 's/src="data:image\/jpeg;base64,[^"]*"/src="cover.jpg"/g' index.html
           perl -pi -e 's/digital: 999/digital: 149/g' index.html
+          perl -pi -e 's/RAZORPAY_KEY_ID = ""/RAZORPAY_KEY_ID = "rzp_live_RMsUyWDL4250IU"/' index.html
+          perl -0777 -pi -e 's~// TODO: send response\.razorpay_payment_id to your backend~window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");~' index.html
 
       - name: Ensure .nojekyll
         run: touch .nojekyll
