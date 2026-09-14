@@ -1,6 +1,8 @@
 name: Sync site files from release
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,11 +19,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --clobber
+          gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --clobber --skip-existing || true
+
+      - name: Ensure .nojekyll
+        run: touch .nojekyll
 
       - name: Commit site files
         run: |
-          touch .nojekyll
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
