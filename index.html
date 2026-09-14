@@ -572,65 +572,12 @@ const PRICES = {
 const RAZORPAY_KEY_ID = "rzp_live_RMsUyWDL4250IU";  // e.g. "rzp_test_XXXXXXXX" or "rzp_live_XXXX"
 
 function buy(plan) {
-  const amount = PRICES[plan] * 100; // Razorpay uses paise
-  const planName = plan === 'combo'
-    ? 'GPT-6 Astra Guide — Digital + Printed Edition'
-    : 'GPT-6 Astra Guide — Digital Edition';
-
-  if (!RAZORPAY_KEY_ID) {
-    alert('Payment gateway is being set up.\n\nTo order now, email:\nlonefaisal977@gmail.com');
-    return;
-  }
-
-  const options = {
-    key: RAZORPAY_KEY_ID,
-    amount: amount,
-    currency: "INR",
-    name: "GPT-6 Astra Guide",
-    description: planName,
-    image: "",  // optional: add your logo URL
-    handler: function (response) {
-      // On successful payment — verify on your backend, then deliver
-      
-      window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");
-      // to verify the signature and trigger delivery.
-    },
-    prefill: {
-      email: "",
-      contact: ""
-    },
-    notes: {
-      plan: plan,
-      product: "GPT-6 Astra Zero-to-Hero Guide"
-    },
-    theme: { color: "#0a1628" },
-    modal: {
-      ondismiss: function() {
-        document.querySelectorAll(".razorpay-container, .razorpay-backdrop, iframe[data-rzp]").forEach(function(el) { el.remove(); });
-        document.body.style.removeProperty("overflow");
-        document.body.style.removeProperty("position");
-      },
-      escape: true,
-      backdropclose: true
-    },
-    retry: {
-      enabled: true,
-      max_count: 3
-    }
+  const PAYMENT_LINKS = {
+    digital: "https://rzp.io/rzp/UqgmcAU0",
+    combo: "https://rzp.io/rzp/L7AaZnA"
   };
-
-  const rzp = new Razorpay(options);
-  rzp.on("payment.failed", function (resp) {
-    console.log("Payment failed:", resp.error);
-    try { rzp.close(); } catch(e) {}
-    setTimeout(function() {
-      document.querySelectorAll(".razorpay-container, .razorpay-backdrop, iframe[data-rzp]").forEach(function(el) { el.remove(); });
-      document.body.style.removeProperty("overflow");
-      document.body.style.removeProperty("position");
-      alert("Payment failed. Please try again.");
-    }, 500);
-  });
-  rzp.open();
+  const link = PAYMENT_LINKS[plan] || PAYMENT_LINKS.digital;
+  window.location.href = link;
 }
 
 /* Sync displayed prices from PRICES config (edit only the values above) */
