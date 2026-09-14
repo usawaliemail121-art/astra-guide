@@ -569,7 +569,7 @@ const PRICES = {
    When ready: paste your Razorpay Key ID below (from dashboard).
    While empty, buttons show a "launching soon" message.
    ============================================================ */
-const RAZORPAY_KEY_ID = "";  // e.g. "rzp_test_XXXXXXXX" or "rzp_live_XXXX"
+const RAZORPAY_KEY_ID = "rzp_live_RMsUyWDL4250IU";  // e.g. "rzp_test_XXXXXXXX" or "rzp_live_XXXX"
 
 function buy(plan) {
   const amount = PRICES[plan] * 100; // Razorpay uses paise
@@ -594,7 +594,7 @@ function buy(plan) {
       alert("Payment successful!\nPayment ID: " + response.razorpay_payment_id +
             "\n\nWe'll email your ebook shortly. For printed orders, " +
             "please email your address to lonefaisal977@gmail.com");
-      // TODO: send response.razorpay_payment_id to your backend
+      window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");
       // to verify the signature and trigger delivery.
     },
     prefill: {
