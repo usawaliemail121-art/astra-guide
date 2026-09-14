@@ -31,6 +31,11 @@ jobs:
           perl -pi -e 's/RAZORPAY_KEY_ID = ""/RAZORPAY_KEY_ID = "rzp_live_RMsUyWDL4250IU"/' index.html
           perl -0777 -pi -e 's~// TODO: send response\.razorpay_payment_id to your backend~window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");~' index.html
 
+      - name: Fix payment handler (close modal, prevent freeze)
+        run: |
+          perl -0777 -pi -e 's~alert\("Payment successful!.*?gmail\.com"\);~~s' index.html
+          perl -pi -e 's/alert\("Payment failed: " \+ resp\.error\.description\);/setTimeout(function(){ try{ rzp.close(); }catch(e){} alert("Payment failed. Please try again."); }, 300);/' index.html
+
       - name: Ensure .nojekyll
         run: touch .nojekyll
 
