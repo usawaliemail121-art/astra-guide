@@ -603,12 +603,32 @@ function buy(plan) {
       plan: plan,
       product: "GPT-6 Astra Zero-to-Hero Guide"
     },
-    theme: { color: "#0a1628" }
+    theme: { color: "#0a1628" },
+    modal: {
+      ondismiss: function() {
+        document.querySelectorAll(".razorpay-container, .razorpay-backdrop, iframe[data-rzp]").forEach(function(el) { el.remove(); });
+        document.body.style.removeProperty("overflow");
+        document.body.style.removeProperty("position");
+      },
+      escape: true,
+      backdropclose: true
+    },
+    retry: {
+      enabled: true,
+      max_count: 3
+    }
   };
 
   const rzp = new Razorpay(options);
   rzp.on("payment.failed", function (resp) {
-    setTimeout(function(){ try{ rzp.close(); }catch(e){} alert("Payment failed. Please try again."); }, 300);
+    console.log("Payment failed:", resp.error);
+    try { rzp.close(); } catch(e) {}
+    setTimeout(function() {
+      document.querySelectorAll(".razorpay-container, .razorpay-backdrop, iframe[data-rzp]").forEach(function(el) { el.remove(); });
+      document.body.style.removeProperty("overflow");
+      document.body.style.removeProperty("position");
+      alert("Payment failed. Please try again.");
+    }, 500);
   });
   rzp.open();
 }
