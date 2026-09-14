@@ -591,9 +591,7 @@ function buy(plan) {
     image: "",  // optional: add your logo URL
     handler: function (response) {
       // On successful payment — verify on your backend, then deliver
-      alert("Payment successful!\nPayment ID: " + response.razorpay_payment_id +
-            "\n\nWe'll email your ebook shortly. For printed orders, " +
-            "please email your address to lonefaisal977@gmail.com");
+      
       window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");
       // to verify the signature and trigger delivery.
     },
@@ -610,7 +608,7 @@ function buy(plan) {
 
   const rzp = new Razorpay(options);
   rzp.on("payment.failed", function (resp) {
-    alert("Payment failed: " + resp.error.description);
+    setTimeout(function(){ try{ rzp.close(); }catch(e){} alert("Payment failed. Please try again."); }, 300);
   });
   rzp.open();
 }
