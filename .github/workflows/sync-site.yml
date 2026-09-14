@@ -19,8 +19,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          rm -f cover.jpg
+          rm -f cover.jpg index.html
           gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Transform index.html for GitHub Pages
+        run: |
+          perl -pi -e 's|https://usmanikart\.shop/cover\.jpg|https://usawaliemail121-art.github.io/astra-guide/cover.jpg|g' index.html
+          perl -pi -e 's|https://usmanikart\.shop/|https://usawaliemail121-art.github.io/astra-guide/|g' index.html
+          perl -pi -e 's/src="data:image\/jpeg;base64,[^"]*"/src="cover.jpg"/g' index.html
 
       - name: Ensure .nojekyll
         run: touch .nojekyll
