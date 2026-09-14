@@ -31,10 +31,61 @@ jobs:
           perl -pi -e 's/RAZORPAY_KEY_ID = ""/RAZORPAY_KEY_ID = "rzp_live_RMsUyWDL4250IU"/' index.html
           perl -0777 -pi -e 's~// TODO: send response\.razorpay_payment_id to your backend~window.location.href = "thank-you.html" + (plan === "combo" ? "?product=combo" : "");~' index.html
 
-      - name: Fix payment handler (close modal, prevent freeze)
+      - name: Improve Razorpay checkout (fix freeze + add modal cleanup)
         run: |
-          perl -0777 -pi -e 's~alert\("Payment successful!.*?gmail\.com"\);~~s' index.html
-          perl -pi -e 's/alert\("Payment failed: " \+ resp\.error\.description\);/setTimeout(function(){ try{ rzp.close(); }catch(e){} alert("Payment failed. Please try again."); }, 300);/' index.html
+          python3 << 'PY'
+          import re
+
+          with open('index.html', 'r') as f:
+              h = f.read()
+
+          old = '''    theme: { color: "#0a1628" }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.on("payment.failed", function (resp) {
+    setTimeout(function(){ try{ rzp.close(); }catch(e){} alert("Payment failed. Please try again."); }, 300);
+  });
+  rzp.open();'''
+
+          new = '''    theme: { color: "#0a1628" },
+    modal: {
+      ondismiss: function() {
+        document.querySelectorAll('.razorpay-container, .razorpay-backdrop, iframe[data-rzp]').forEach(function(el) { el.remove(); });
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('position');
+      },
+      escape: true,
+      backdropclose: true
+    },
+    retry: {
+      enabled: true,
+      max_count: 3
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.on("payment.failed", function (resp) {
+    console.log("Payment failed:", resp.error);
+    try { rzp.close(); } catch(e) {}
+    setTimeout(function() {
+      document.querySelectorAll('.razorpay-container, .razorpay-backdrop, iframe[data-rzp]').forEach(function(el) { el.remove(); });
+      document.body.style.removeProperty('overflow');
+      document.body.style.removeProperty('position');
+      alert("Payment failed. Please try again.");
+    }, 500);
+  });
+  rzp.open();'''
+
+          if old in h:
+              h = h.replace(old, new)
+              print("PATCHED: checkout block replaced")
+          else:
+              print("WARNING: old block not found")
+
+          with open('index.html', 'w') as f:
+              f.write(h)
+          PY
 
       - name: Ensure .nojekyll
         run: touch .nojekyll
@@ -44,5 +95,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Sync site files from release v1.0.0" || echo "Nothing to commit"
+          git commit -m "Fix checkout freeze: modal cleanup + retry + backdrop close" || echo "Nothing to commit"
           git push
