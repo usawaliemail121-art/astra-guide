@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — GPT-6 Astra Guide</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1628; --navy-2:#0f1f38; --navy-3:#152a48;
+  --gold:#d4a73a; --gold-2:#c9a227; --gold-soft:rgba(212,167,58,.14);
+  --cream:#f8f5ef; --text-dim:rgba(248,245,239,.72); --text-dim-2:rgba(248,245,239,.5);
+  --line:rgba(212,167,58,.22);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Plus Jakarta Sans',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--navy);color:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,rgba(212,167,58,.10),transparent 55%);pointer-events:none;z-index:0}
+.card{position:relative;z-index:1;max-width:560px;width:100%;background:linear-gradient(165deg,var(--navy-3),var(--navy-2));border:1px solid var(--gold);border-radius:20px;padding:50px 40px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.diamond{display:inline-block;width:8px;height:8px;background:var(--gold);transform:rotate(45deg);margin:0 6px}
+.check-circle{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:var(--gold-soft);animation:pop .5s ease .2s both}
+@keyframes pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.check-circle svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:3}
+.card h1{font-family:var(--serif);font-size:2rem;font-weight:700;margin-bottom:10px}
+.card p.lead{color:var(--text-dim);font-size:1rem;margin-bottom:30px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:28px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15px;padding:16px 32px;border-radius:8px;cursor:pointer;border:none;transition:all .25s;text-decoration:none;width:100%;justify-content:center;margin-bottom:12px}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);box-shadow:0 8px 26px rgba(212,167,58,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(212,167,58,.4)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(37,211,102,.3)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.track-box{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:12px}
+.track-box h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;margin-bottom:8px;color:var(--gold)}
+.track-box p{font-size:.9rem;color:var(--text-dim);margin-bottom:16px}
+.contact{margin-top:24px;font-size:.85rem;color:var(--text-dim-2)}
+.contact a{color:var(--gold)}
+@media(max-width:480px){.card{padding:36px 24px}.card h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="check-circle">
+    <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+  </div>
+
+  <h1>Thank You for Your Purchase!</h1>
+  <p class="lead">Your payment was successful. Your GPT-6 Astra Guide is ready to download below.</p>
+
+  <div class="divider"></div>
+
+  <a href="/GPT6_Astra_Zero_to_Hero_Guide.pdf" download class="btn btn-gold">
+    <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+    Download Your Ebook (PDF)
+  </a>
+
+  <div id="combo-section" style="display:none">
+    <div class="divider"></div>
+    <div class="track-box">
+      <h3>Track Your Printed Book</h3>
+      <p>Your printed copy will be shipped within 1-2 business days. Click below to message us on WhatsApp with your order details and we'll share the tracking number as soon as it ships.</p>
+      <a href="https://wa.me/918492020923?text=Hi%2C%20I%20just%20purchased%20the%20GPT-6%20Astra%20Guide%20%28Digital%20%2B%20Printed%20Edition%29.%20I%20need%20tracking%20information%20for%20my%20printed%20book." target="_blank" class="btn btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4z M12 2a10 10 0 0 0 0 20 10 10 0 0 0 0-20z"/></svg>
+        WhatsApp Us for Tracking
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="contact">
+    <span class="diamond"></span>
+    <span>Questions? Email <a href="mailto:lonefaisal977@gmail.com">lonefaisal977@gmail.com</a></span>
+    <span class="diamond"></span>
+  </div>
+</div>
+
+<script>
+// Show WhatsApp tracking section if combo product was purchased
+const params = new URLSearchParams(window.location.search);
+if(params.get('product') === 'combo') {
+  document.getElementById('combo-section').style.display = 'block';
+}
+</script>
+</body>
+</html>
